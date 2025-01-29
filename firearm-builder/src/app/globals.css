@@ -3,19 +3,113 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+.complete-firearm {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.page-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.page-top>h1 {
+  font-family: "Playwrite IN", serif;
+  font-size: 45px;
+  text-align: center;
+}
+
+.page-top>h3 {
+  font-family: "Poppins", serif;
+  font-size: 18px;
+  text-align: center;
+}
+
+.page-top>h6 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  text-align: right;
+  width: 100%;
+}
+
+.bold-text {
+  font-weight: 600;
+}
+
+.firearm-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+div {
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.choose-text {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.entire-page {
+  padding: 20px;
+}
+
+.firearm-component {
+  flex: 1 1 calc(25% - 20px);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  width: 25%;
+  box-sizing: border-box;
+  flex-basis: calc(25% - 16px);
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.color-circle {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+  margin: 0 auto 15px auto;
+}
+
+.placeholder-image {
+  width: 800px;
+  height: auto;
 }
